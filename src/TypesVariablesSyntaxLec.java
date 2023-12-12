@@ -24,5 +24,14 @@ public class TypesVariablesSyntaxLec {
 
         final String EMPEROR_OF_IMUGI = "David \"Lord Megatron\" Stephens";
         System.out.println(EMPEROR_OF_IMUGI);
+
+        byte tinyNum = 22;
+        short stillSmallNum = (short) (tinyNum + 3);
+        System.out.println(stillSmallNum);
+        float almostPi = 3.14F;
+        long bigNum = 200L;
+        int almostAlmostPi = (int) almostPi;
+        System.out.println(almostPi);
+        System.out.println(almostAlmostPi);
     }
 }
