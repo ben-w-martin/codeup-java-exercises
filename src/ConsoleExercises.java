@@ -11,10 +11,13 @@ public class ConsoleExercises {
         String sentence;
         String lengthStr;
         String widthStr;
+        String heightStr;
         float length;
         float width;
+        float height;
         float perimeter;
         float area;
+        float volume;
 
         // Console******************************************************************
         System.out.format("The value of pi is approximately %.2f.\n", pi);
@@ -58,16 +61,21 @@ public class ConsoleExercises {
         lengthStr = sc.nextLine();
         System.out.print("Enter the width of your classroom/office: ");
         widthStr = sc.nextLine();
+        System.out.print("Enter the height of your classroom/office: ");
+        heightStr = sc.nextLine();
         length = Float.parseFloat(lengthStr);
         width = Float.parseFloat(widthStr);
+        height = Float.parseFloat(heightStr);
 
         // todo Display the area and perimeter of that classroom.
         //  * The area of a rectangle is equal to the length times the width, and the perimeter of a rectangle is equal to 2 times the length plus 2 times the width.
 
         perimeter = (length * 2) + (width * 2);
         area = length * width;
+        volume = length * width * height;
 
         System.out.println("Your classroom perimeter is: --> " + perimeter +" <--");
         System.out.println("Your classroom area is: --> " + area +" <--");
+        System.out.println("Your classroom volume is: --> " + volume +" cubic ft. <--");
     }
 }
