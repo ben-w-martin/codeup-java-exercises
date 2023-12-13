@@ -29,12 +29,24 @@ public class ControlFlowExercises {
 //        } while (i > -10);
 
 //        Twos squared
-        int i = 2;
-        do {
-            System.out.println(i);
-            i = (int) Math.pow(i, 2);
+//        int i = 2;
+//        do {
+//            System.out.println(i);
+//            i = (int) Math.pow(i, 2);
+//
+//        } while (i < 1_000_000);
 
-        } while (i < 1_000_000);
+//        For Loops
+//        fives
+//        for (int i = 100; i >= -10; i -= 5) {
+//            System.out.println(i);
+//        }
+
+//        twos
+//        for (int i = 2; i < 1_000_000; i = (int) Math.pow(i, 2)) {
+//            System.out.println(i);
+//        }
+
 
     }
 }
