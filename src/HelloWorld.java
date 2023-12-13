@@ -2,13 +2,17 @@ public class HelloWorld {
     public static void main(String[] args) {
         System.out.println("Hello, World.");
 
-        int myFavoriteNumber = 4;
+        long myFavoriteNumber = 4;
+        long myLongNum = 20L;
+        System.out.println(myLongNum);
         System.out.println(myFavoriteNumber);
 
         String myString = "This is meh strang.";
         System.out.println(myString);
 
-        float myNumber = 3.14F;
+        float myNumber;
+//        myNumber = 123;
+        myNumber = 3.14F;
         System.out.println(myNumber);
 
 //        int x = 5;
