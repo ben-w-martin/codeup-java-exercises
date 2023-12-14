@@ -93,7 +93,7 @@ public class ControlFlowExercises {
         sc.nextLine();
         String grade = "";
 
-        if (Objects.equals(userConfirm, "y")) {
+        if (userConfirm.equals("y")) {
             if (numGrade >= 95 && numGrade <= 100) {
                 grade = "A+";
             } else if (numGrade >= 90 && numGrade <= 94) {
