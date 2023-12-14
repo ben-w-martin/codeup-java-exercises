@@ -94,12 +94,24 @@ public class ControlFlowExercises {
         String grade = "";
 
         if (Objects.equals(userConfirm, "y")) {
-            if (numGrade >= 88 && numGrade <= 100) {
+            if (numGrade >= 95 && numGrade <= 100) {
+                grade = "A+";
+            } else if (numGrade >= 90 && numGrade <= 94) {
                 grade = "A";
-            } else if (numGrade >= 80 && numGrade <= 87) {
+            } else if (numGrade >= 88 && numGrade <= 89) {
+                grade = "A-";
+            } else if (numGrade >= 85 && numGrade <= 87) {
+                grade = "B+";
+            } else if (numGrade >= 82 && numGrade <= 84) {
                 grade = "B";
-            } else if (numGrade >= 67 && numGrade <= 79) {
+            } else if (numGrade >= 80 && numGrade <= 81) {
+                grade = "B-";
+            } else if (numGrade >= 75 && numGrade <= 79) {
+                grade = "C+";
+            } else if (numGrade >= 70 && numGrade <= 74) {
                 grade = "C";
+            } else if (numGrade >= 67 && numGrade <= 69) {
+                grade = "C-";
             } else if (numGrade >= 60 && numGrade <= 66) {
                 grade = "D";
             } else if (numGrade >= 0 && numGrade <= 59) {
