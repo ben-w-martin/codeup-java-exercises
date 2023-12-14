@@ -25,6 +25,7 @@ public class ConsoleExercises {
         // todo Prompt a user to enter a integer and store that value in an int variable using the nextInt method.
         //   * What happens if you input something that is not an integer?
         Scanner sc = new Scanner(System.in);
+        sc.useDelimiter("\n");
 
         System.out.print("Enter an int: ");
         nextInt = sc.nextInt();
