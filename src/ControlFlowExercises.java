@@ -1,3 +1,4 @@
+import java.util.Objects;
 import java.util.Scanner;
 
 public class ControlFlowExercises {
@@ -65,24 +66,50 @@ public class ControlFlowExercises {
 
 //        Table of Powers
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter an int: ");
-        int userInt = sc.nextInt();
+//        System.out.println("Enter an int: ");
+//        int userInt = sc.nextInt();
+//
+//        System.out.printf("Here is your table based on the input: --> %d <--\n\n", userInt);
+//
+//        System.out.printf("number | squared | cubed\n");
+//        System.out.printf("------ | ------- | -----\n");
+//
+//        int i = 1;
+//
+//        while (i <= userInt) {
+//            int squared = i;
+//            int cubed = i;
+//            squared = (int) Math.pow(squared, 2);
+//            cubed = (int) Math.pow(cubed, 3);
+//            System.out.printf(" %d     | %d       | %d   \n", i, squared, cubed);
+//            i++;
+//        }
 
-        System.out.printf("Here is your table based on the input: --> %d <--\n\n", userInt);
+        System.out.println("Give a number between 0 and 100: ");
+        int numGrade = sc.nextInt();
+        System.out.printf("Your numGrade: %d\n", numGrade);
+        System.out.println("Continue? [Y/N]");
+        String userConfirm = sc.next();
+        sc.nextLine();
+        String grade = "";
 
-        System.out.printf("number | squared | cubed\n");
-        System.out.printf("------ | ------- | -----\n");
-
-        int i = 1;
-
-        while (i <= userInt) {
-            int squared = i;
-            int cubed = i;
-            squared = (int) Math.pow(squared, 2);
-            cubed = (int) Math.pow(cubed, 3);
-            System.out.printf(" %d     | %d       | %d   \n", i, squared, cubed);
-            i++;
+        if (Objects.equals(userConfirm, "y")) {
+            if (numGrade >= 88 && numGrade <= 100) {
+                grade = "A";
+            } else if (numGrade >= 80 && numGrade <= 87) {
+                grade = "B";
+            } else if (numGrade >= 67 && numGrade <= 79) {
+                grade = "C";
+            } else if (numGrade >= 60 && numGrade <= 66) {
+                grade = "D";
+            } else if (numGrade >= 0 && numGrade <= 59) {
+                grade = "F";
+            } else {
+                System.out.println("Invalid input!");
+            }
+            System.out.printf("Your grade is %s", grade);
+        } else {
+            System.out.println("Have a nice day!");
         }
-
     }
 }
