@@ -33,21 +33,16 @@ public class MethodsExercises {
 
     // Bonus Recursive **
 //    public static int multiplyRecursive(int x, int y) {
-//        if (y == 1) {
+//        if (y == 1 || y == -1) {
 //            System.out.println("base");
 //            return x;
-//        } else if (y == -1) {
-//            return -x;
 //        }
-//        if (y > 0) {
+//        if (x > 0 && y > 0) {
 //            System.out.printf("cond 1: %d\n",  x + multiplyRecursive(x, y - 1));
 //            return x + multiplyRecursive(x, y - 1);
-//        } else if (x < 0 && y < 0) {
+//        } else if ((y < 0 || x < 0) && !(y < 0 && x < 0) ) {
 //            System.out.printf("cond 2: %d\n", x + multiplyRecursive(x, y + 1));
-//            return x + multiplyRecursive(x, y + 1);
-//        } else if (y < 0) {
-//            System.out.printf("cond 3: %d\n", x + multiplyRecursive(x, y + 1));
-//            return multiplyRecursive(x, y + 1) - x;
+//            return x + multiplyRecursive(x, y - 1);
 //        } else {
 //            return 0;
 //        }
@@ -56,14 +51,23 @@ public class MethodsExercises {
     // 2 GET INTEGER********************************************************************
     public static int getInteger(int min, int max) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter a number between 1 and 10: ");
-        int userInput = sc.nextInt();
-        if (userInput >= min && userInput <= max) {
-            System.out.printf("%d is between %d and %d.", userInput, min, max);
-            return userInput;
+        int input = sc.nextInt();
+        if (input >= min && input <= max) {
+            System.out.printf("%d is between %d and %d.\n", input, min, max);
+            return input;
         } else {
+            System.out.println("Enter a number between 1 and 10: ");
             return getInteger(1, 10);
         }
+    }
+
+    // 3 FACTORIAL**********************************************************************
+    public static int getFactorial(int num) {
+       if (num == 1) {
+           System.out.println("The factorial is:");
+           return num;
+       }
+       return num * getFactorial(num - 1);
     }
 
     // MAIN*****************************************************************************
@@ -76,7 +80,15 @@ public class MethodsExercises {
         System.out.println(divide(56, 11));
         System.out.println(modulus(132, 19));
         System.out.println(multiplyManual(16, 17));
-//        System.out.println(multiplyRecursive(-5, -7));
-        getInteger(1, 10);
+//        System.out.println(multiplyRecursive(-5, 7));
+
+//      GET INT
+        System.out.println("GET INT__________________________________");
+        System.out.println("Enter a number between 1 and 10: ");
+        int userInput = getInteger(1, 10);
+
+//      FACTORIAL
+        System.out.println("FACTORIAL________________________________");
+        System.out.println(getFactorial(getInteger(1, 10)));
     }
 }
