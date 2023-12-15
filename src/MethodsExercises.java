@@ -32,37 +32,39 @@ public class MethodsExercises {
     }
 
     // Bonus Recursive **
-    public static int multiplyRecursive(int x, int y) {
-        if (y == 1) {
-            System.out.println("base");
-            return x;
-        } else if (y == -1) {
-            return -x;
-        }
-        if (y > 0) {
-            System.out.printf("cond 1: %d\n",  x + multiplyRecursive(x, y - 1));
-            return x + multiplyRecursive(x, y - 1);
-        } else if (x < 0 && y < 0) {
-            System.out.printf("cond 2: %d\n", x + multiplyRecursive(x, y + 1));
-            return x + multiplyRecursive(x, y + 1);
-        } else if (y < 0) {
-            System.out.printf("cond 3: %d\n", x + multiplyRecursive(x, y + 1));
-            return multiplyRecursive(x, y + 1) - x;
-        } else {
-            return 0;
-        }
-    }
-
-    // 2 GET INTEGER********************************************************************
-//    public static int getInteger(int min, int max) {
-//        Scanner sc = new Scanner(System.in);
-//        if (min == null || max == null) {
-//            System.out.print("Enter a number between 1 and 10: ");
-//            int userInput = getInteger(1, 10);
+//    public static int multiplyRecursive(int x, int y) {
+//        if (y == 1) {
+//            System.out.println("base");
+//            return x;
+//        } else if (y == -1) {
+//            return -x;
+//        }
+//        if (y > 0) {
+//            System.out.printf("cond 1: %d\n",  x + multiplyRecursive(x, y - 1));
+//            return x + multiplyRecursive(x, y - 1);
+//        } else if (x < 0 && y < 0) {
+//            System.out.printf("cond 2: %d\n", x + multiplyRecursive(x, y + 1));
+//            return x + multiplyRecursive(x, y + 1);
+//        } else if (y < 0) {
+//            System.out.printf("cond 3: %d\n", x + multiplyRecursive(x, y + 1));
+//            return multiplyRecursive(x, y + 1) - x;
 //        } else {
-//
+//            return 0;
 //        }
 //    }
+
+    // 2 GET INTEGER********************************************************************
+    public static int getInteger(int min, int max) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number between 1 and 10: ");
+        int userInput = sc.nextInt();
+        if (userInput >= min && userInput <= max) {
+            System.out.printf("%d is between %d and %d.", userInput, min, max);
+            return userInput;
+        } else {
+            return getInteger(1, 10);
+        }
+    }
 
     // MAIN*****************************************************************************
     public static void main(String[] args) {
@@ -74,6 +76,7 @@ public class MethodsExercises {
         System.out.println(divide(56, 11));
         System.out.println(modulus(132, 19));
         System.out.println(multiplyManual(16, 17));
-        System.out.println(multiplyRecursive(-5, -7));
+//        System.out.println(multiplyRecursive(-5, -7));
+        getInteger(1, 10);
     }
 }
