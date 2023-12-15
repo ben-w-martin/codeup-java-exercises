@@ -80,20 +80,17 @@ public class MethodsExercises {
         Scanner sc = new Scanner(System.in);
         int die1 = (int) getRandomDouble(1, sides);
         int die2 = (int) getRandomDouble(1, sides);
-        System.out.println("Roll the Dice? [y/n]");
-        String resp = sc.next();
-        sc.nextLine();
-        if (resp.equalsIgnoreCase("y")) {
-            System.out.printf("Die 1: %d\nDie 2: %d\n", die1, die2);
-            System.out.println("Roll again? [y/n]. Type response and number of sides\n separated with a space.");
-            String again = sc.next();
-            int nextSides = Integer.parseInt(sc.next());
-            if (again.equalsIgnoreCase("y")) {
-                rollDice(nextSides);
-            }
-        } else {
+
+        System.out.printf("Die 1: %d\nDie 2: %d\n", die1, die2);
+        System.out.println("Roll again? [y/n]");
+        String again = sc.next();
+        if (!again.equalsIgnoreCase("y")) {
             System.out.println("Maybe next time.");
+            return;
         }
+        System.out.println("Pick a number of sides for your dice.");
+        int nextSides = Integer.parseInt(sc.next());
+        rollDice(nextSides);
     }
 
     // MAIN*****************************************************************************
@@ -129,10 +126,14 @@ public class MethodsExercises {
 
 //      DICE
         System.out.println("ROLL DICE________________________________");
-        System.out.println("Pick a number of sides for your dice.");
-        double sides = sc.nextDouble();
-
-        rollDice(sides);
+        System.out.println("Roll the Dice? [y/n]");
+        String resp = sc.next();
+        if (resp.equalsIgnoreCase("y")) {
+            System.out.println("Pick a number of sides for your dice.");
+            double sides = sc.nextDouble();
+            rollDice(sides);
+        }
 
     }
 }
+
