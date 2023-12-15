@@ -44,7 +44,7 @@ public class HighLow {
         String play = sc.next();
         int tracker = 10;
         if (play.equals("Y")) {
-            System.out.println("Guess a number between 1 and 100.");
+            System.out.println("Guess a number between 1 and 100. You have 10 guesses!");
             int numToGuess = (int) getRandomDouble();
             game(numToGuess, tracker);
         } else {
